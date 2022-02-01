@@ -11,6 +11,7 @@ export default class RunnerGameManager extends EventEmitter {
         this.camera = props.camera;
 
         this.finished = false;
+        this.score = '00000';
 
         this.shaker = ScreenShake();
 
@@ -19,8 +20,10 @@ export default class RunnerGameManager extends EventEmitter {
             html5: true
         });
 
-        this.time.on('tick', () => {
+        this.time.on('tick', time => {
             this.shaker.update(this.camera.instance);
+
+            this.updateScore(time);
         })
 
         this.on('fail', () => {
@@ -41,4 +44,17 @@ export default class RunnerGameManager extends EventEmitter {
         })
     }
 
+    updateScore(time) {
+        if (!!this.finished) return;
+
+        const score = Math.round(time.elapsed * 10)
+            .toLocaleString('en-US', {
+                minimumIntegerDigits: 5,
+                useGrouping: false
+            });
+
+        document.getElementById('runner-score').innerText = score;
+
+        this.score = score;
+    }
 }

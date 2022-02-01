@@ -12,3 +12,27 @@ html {
     height: 100%;
     overflow: hidden;
 }
+
+@font-face {
+    font-family: 'mario_kart_dsregular';
+    src: url('../fonts/mario-kart-ds-webfont.woff2') format('woff2'),
+    url('../fonts/mario-kart-ds-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: '3dventuremedium';
+    src: url('../fonts/3dventure-webfont.woff2') format('woff2'),
+    url('../fonts/3dventure-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#runner-score {
+    font-family: '3dventuremedium', serif;
+    font-size: 4em;
+    color: #3b3b3b;
+}

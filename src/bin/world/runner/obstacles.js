@@ -23,7 +23,7 @@ export default class Obstacles {
     }
 
     updateRange() {
-        return _.random(30, 100);
+        return _.random(40, 100);
     }
 
     load() {
