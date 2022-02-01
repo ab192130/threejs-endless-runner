@@ -27,7 +27,10 @@ export default class RunnerGameManager extends EventEmitter {
             if (!this.finished) {
                 sfxGameOver.play();
 
-                this.shaker.shake(this.camera.instance, new THREE.Vector3(0.1, 0, 0), 300);
+                this.shaker.shake(
+                    this.camera.instance,
+                    new THREE.Vector3(0.1, 0.1, 0), 300
+                );
 
                 setTimeout(() => {
                     location.reload();
