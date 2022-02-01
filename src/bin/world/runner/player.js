@@ -143,6 +143,12 @@ export default class Player {
     }
 
     checkCollisions(mesh) {
-        this.collider.setFromObject(mesh);
+        //this.collider.setFromObject(mesh);
+        this.collider.min.x = 0;
+        this.collider.max.x = 0.15;
+        this.collider.min.y = mesh.position.y;
+        this.collider.max.y = mesh.position.y + 0.15;
+        this.collider.min.z = 0;
+        this.collider.max.z = 0;
     }
 }
