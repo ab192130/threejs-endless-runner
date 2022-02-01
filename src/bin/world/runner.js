@@ -8,11 +8,12 @@ export default class RunnerGame {
         this.loader = props.loader;
         this.time = props.time;
         this.shadows = props.shadows;
+        this.camera = props.camera;
 
         this.container = new THREE.Object3D();
         this.container.name = 'runner_game';
 
-        this.manager = new RunnerGameManager();
+        this.manager = new RunnerGameManager({time: this.time, camera: this.camera});
 
         this.initPlayer();
         this.initObstacles();
